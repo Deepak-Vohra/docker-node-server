@@ -1,8 +1,7 @@
 node("docker") {
     docker.withRegistry('https://index.docker.io/v1/', 'dvohra-dockerhub') {
         
-        sh "mkdir -p /home/jenkins/workspace/docker-plugin-pipeline"
-        sh "chmod 777 /home/jenkins/workspace/docker-plugin-pipeline"
+       
         
         git url: "https://github.com/dvohra/docker-node-server.git", credentialsId: 'dvohra-github'
     
