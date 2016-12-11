@@ -1,20 +1,18 @@
---- 
 phases: 
   build: 
     commands: 
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "docker build -t dvohra/nodeserver:latest ."
-      - "docker tag dvohra/nodeserver:latest dvohra/nodeserver:latest"
+      - "docker build -t nodeserver ."
+      - "docker tag nodeserver:latest 672593526685.dkr.ecr.us-east-1.amazonaws.com/nodeserver:latest"
   post_build: 
     commands: 
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-      - "docker push dvohra/nodeserver:latest"
+      - "docker push 672593526685.dkr.ecr.us-east-1.amazonaws.com/nodeserver:latest"
   pre_build: 
     commands: 
-      - "echo Logging in to Docker Hub..."
-      - "docker login --username=\"dvohra\" --password=\"calgary10\""
+      - "echo Logging in to Amazon ECR..."
+      - "$(aws ecr get-login --region us-east-1)"
 version: 0.1
-
 
