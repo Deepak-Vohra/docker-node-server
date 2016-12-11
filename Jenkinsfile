@@ -1,8 +1,5 @@
 node("docker") {
     docker.withRegistry('https://index.docker.io/v1/', 'dvohra-dockerhub') {
-        
-       
-        
         git url: "https://github.com/dvohra/docker-node-server.git", credentialsId: 'dvohra-github'
     
         sh "git rev-parse HEAD > .git/commit-id"
