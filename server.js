@@ -2,7 +2,7 @@ var http = require('http');
 var handleRequest = function (request, response) {
   response.writeHead(200);
   
-  response.end('Hello from Node Application Deployed to Elastic Beanstalk!');
+  response.end('Hello CodeCommit!');
   
 };
 var www = http.createServer(handleRequest);
