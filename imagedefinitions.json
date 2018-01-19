@@ -1,6 +1,6 @@
 [
     {
         "name": "nodeserver",
-        "imageUri": "dvohra/node-server"
+        "imageUri": "tutum/hello-world"
     }
 ]
