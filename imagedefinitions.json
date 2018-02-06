@@ -1,0 +1,6 @@
+[
+    {
+        "name": "nodeserver",
+        "imageUri": "dvohra/node-server"
+    }
+]
