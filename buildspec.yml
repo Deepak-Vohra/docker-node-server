@@ -1,0 +1,18 @@
+--- 
+phases: 
+  build: 
+    commands: 
+      - "echo Build started on `date`"
+      - "echo Building the Docker image..."
+      - "docker build -t dvohra/nodeserver:latest ."
+      - "docker tag dvohra/nodeserver:latest dvohra/nodeserver:latest"
+  post_build: 
+    commands: 
+      - "echo Build completed on `date`"
+      - "echo Pushing the Docker image..."
+      - "docker push dvohra/nodeserver:latest"
+  pre_build: 
+    commands: 
+      - "echo Logging in to Docker Hub..."
+      - "docker login --username=\"dvohra\" --password=\"calgary10\""
+version: 0.1
