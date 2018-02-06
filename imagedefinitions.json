@@ -1,6 +1,0 @@
-[
-    {
-        "name": "nodeserver",
-        "imageUri": "tutum/hello-world"
-    }
-]
