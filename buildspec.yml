@@ -4,8 +4,8 @@ phases:
     commands: 
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "docker build -t dvohra/node-server:latest ."
-      - "docker tag dvohra/node-server:latest dvohra/node-server:latest"
+      - "docker build -t dvohra/node-server ."
+      - "docker tag dvohra/node-server dvohra/node-server:latest"
   post_build: 
     commands: 
       - "echo Build completed on `date`"
