@@ -4,7 +4,7 @@ phases:
     commands: 
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "docker build -t dvohra/node-server ."
+      - "docker build -t yahya4246/node-server ."
       - "docker tag dvohra/node-server dvohra/node-server:latest"
   post_build: 
     commands: 
