@@ -18,6 +18,6 @@ phases:
 version: 0.1
 artifacts:
   files:
-    - target/messageUtil-1.0.jar
+    - codepipeline-us-east-1-872511044509
 
 
