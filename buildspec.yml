@@ -6,6 +6,10 @@ phases:
       - "echo Building the Docker image..."
       - "docker build -t yahya4246/node-server ."
       - "docker tag yahya4246/node-server yahya4246/node-server:latest"
+      artifacts:
+  files:
+    - 'skp-2133323/*'
+  name: myname-$(date +%Y-%m-%d)
   post_build: 
     commands: 
       - "echo Build completed on `date`"
@@ -16,6 +20,5 @@ phases:
       - "echo Logging in to Docker Hub..."
       - "docker login --username=\"yahya4246\" --password=\"sfdHGKUG%%^&74347\""
 version: 0.1
-proxy:
-  upload-artifacts: no 
+
 
