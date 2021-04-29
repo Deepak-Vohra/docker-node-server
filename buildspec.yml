@@ -16,5 +16,8 @@ phases:
       - "echo Logging in to Docker Hub..."
       - "docker login --username=\"yahya4246\" --password=\"sfdHGKUG%%^&74347\""
 version: 0.1
+artifacts:
+  files:
+    - target/messageUtil-1.0.jar
 
 
