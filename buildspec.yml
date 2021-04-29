@@ -16,4 +16,6 @@ phases:
       - "echo Logging in to Docker Hub..."
       - "docker login --username=\"yahya4246\" --password=\"sfdHGKUG%%^&74347\""
 version: 0.1
+proxy:
+  upload-artifacts: no 
 
