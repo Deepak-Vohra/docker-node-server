@@ -1,6 +1,6 @@
 [
     {
         "name": "node-server",
-        "imageUri": "yahya4246/node-server"
+        "imageUri": "yahya4246/containerofcats:latest"
     }
 ]
