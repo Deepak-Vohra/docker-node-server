@@ -1,4 +1,3 @@
-FROM node:4.6
-COPY server.js .
-EXPOSE 80
-CMD node server.js
+FROM redis
+COPY redis.conf /usr/local/etc/redis/redis.conf
+CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
