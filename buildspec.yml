@@ -4,16 +4,20 @@ phases:
     commands: 
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "docker build -t dvohra/node-server ."
-      - "docker tag dvohra/node-server dvohra/node-server:latest"
+      - "docker build -t yahya4246/containerofcats ."
+      - "docker tag yahya4246/containerofcats yahya4246/containerofcats:latest"
   post_build: 
     commands: 
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
-      - "docker push dvohra/node-server:latest"
+      - "docker push yahya4246/containerofcats:latest"
   pre_build: 
     commands: 
       - "echo Logging in to Docker Hub..."
-      - "docker login --username=\"dvohra\" --password=\"password\""
+      - "docker login --username=\"yahya4246\" --password=\"sfdHGKUG%%^&74347\""
 version: 0.1
+artifacts:
+  files:
+    - '**/*'
+
 
