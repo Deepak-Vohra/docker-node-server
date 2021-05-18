@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     AWS_ACCOUNT_ID: 011383624955
-    IMAGE_REPO_NAME: test-repo
+    IMAGE_REPO_NAME: yahya4246/containerofcats:latest
     BRANCH_NAME: master
 
 phases:
