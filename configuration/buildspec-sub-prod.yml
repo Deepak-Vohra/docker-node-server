@@ -10,13 +10,13 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 011383624955.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $IMAGE_REPO_NAME:$BRANCH_NAME.$CODEBUILD_RESOLVED_SOURCE_VERSION .
-      - docker tag $IMAGE_REPO_NAME:$BRANCH_NAME.$CODEBUILD_RESOLVED_SOURCE_VERSION  $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$BRANCH_NAME.$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - docker build -t test-repo . 
+      - docker tag test-repo:latest 011383624955.dkr.ecr.us-east-1.amazonaws.com/test-repo:latest
   post_build:
     commands:
       - echo Build completed on `date`
