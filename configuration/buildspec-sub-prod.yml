@@ -16,7 +16,7 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t test-repo . 
-      - docker tag 486726484754.dkr.ecr.us-east-1.amazonaws.com/ubuntu
+      - docker tag ubuntu:latest 486726484754.dkr.ecr.us-east-1.amazonaws.com/ubuntu:latest
   post_build:
     commands:
       - echo Build completed on `date`
