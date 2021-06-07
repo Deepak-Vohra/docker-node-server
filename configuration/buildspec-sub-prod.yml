@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     AWS_ACCOUNT_ID: 486726484754
-    IMAGE_REPO_NAME: yahya4246/containerofcats:latest
+    IMAGE_REPO_NAME: ubuntu
     BRANCH_NAME: test
 
 phases:
