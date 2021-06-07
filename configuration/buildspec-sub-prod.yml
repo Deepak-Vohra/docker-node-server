@@ -2,28 +2,28 @@ version: 0.2
 
 env:
   variables:
-    AWS_ACCOUNT_ID: 486726484754
-    IMAGE_REPO_NAME: ubuntu
-    BRANCH_NAME: test
+    AWS_ACCOUNT_ID: 011383624955
+    IMAGE_REPO_NAME: yahya4246/containerofcats:latest
+    BRANCH_NAME: master
 
 phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 486726484754.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 011383624955.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t ubuntu:latest . 
-      - docker tag ubuntu:latest 486726484754.dkr.ecr.us-east-1.amazonaws.com/ubuntu:latest
+      - docker build -t test-repo . 
+      - docker tag test-repo:latest 011383624955.dkr.ecr.us-east-1.amazonaws.com/test-repo:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$BRANCH_NAME.$CODEBUILD_RESOLVED_SOURCE_VERSION
       - echo Writing image definitions file...
-      - printf '[{"name":"nodeserver","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$BRANCH_NAME.$CODEBUILD_RESOLVED_SOURCE_VERSION > imagedefinitions.json
+      - printf '[{"name":"node-server","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$BRANCH_NAME.$CODEBUILD_RESOLVED_SOURCE_VERSION > imagedefinitions.json
 
 artifacts:
   files: imagedefinitions.json
