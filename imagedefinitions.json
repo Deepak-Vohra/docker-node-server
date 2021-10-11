@@ -1,6 +1,6 @@
 [
     {
         "name": "node-server",
-        "imageUri": "yahya4246/containerofcats:latest"
+        "imageUri": "322197409684.dkr.ecr.us-east-1.amazonaws.com/cats"
     }
 ]
