@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    AWS_ACCOUNT_ID: 392292519055
+    AWS_ACCOUNT_ID: 322197409684
     IMAGE_REPO_NAME: yahya4246/containerofcats:latest
     BRANCH_NAME: master
 
@@ -10,13 +10,13 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 392292519055.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 322197409684.dkr.ecr.us-east-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t test-repo . 
-      - docker tag 392292519055.dkr.ecr.us-east-1.amazonaws.com/test:latest
+      - docker tag 322197409684.dkr.ecr.us-east-1.amazonaws.com/test:latest
   post_build:
     commands:
       - echo Build completed on `date`
